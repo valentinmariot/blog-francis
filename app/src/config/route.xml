@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<routes>
+    <route path="/" action="index" controller="PostController" />
+    <route path="post" action="show" controller="PostController" params="id" />
+    <route path="insert-post" action="insert" controller="PostController" params="title,content,id_user" />
+    <route path="delete-post" action="delete" controller="PostController" params="id" />
+    <route path="newpost" action="view" controller="PostController" />
+
+    <route path="add-user" action="insert" controller="UserController" params="firstname,lastname,mail" />
+    <route path="connect" action="connection" controller="UserController" />
+    <route path="delete-user" action="delete" controller="UserController" params="id"/>
+    <route path="update-user" action="update" controller="UserController" params="id, is_admin"/>
+
+    <route path="userlist" action="index" controller="UserController" />
+    <route path="signup" action="view" controller="UserController" />
+
+    <route path="delete-comment" action="delete" controller="CommentaryController" params="id" />
+    <route path="insert-comment" action="insert" controller="CommentaryController" params="content, post_id" />
+
+</routes>
