@@ -1,6 +1,6 @@
 # Blog MVC 
 
-## Réalisé par Carine Grisot & Valentin Mariot
+## Réalisé par Carine Grisot & Valentin Mariot (le covidé ? :upside_down_face:)
 #### WEBP2023
 
 -------------------------------------------------------------
