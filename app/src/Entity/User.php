@@ -54,4 +54,24 @@ class User extends Model
         $query = $this->pdo->prepare('INSERT INTO `users` SET `firstname` = :firstname, `lastname` = :lastname, `mail` = :mail, `is_admin` = :is_admin, `password` = :pwd');
         $query->execute(compact('firstname', 'lastname', 'mail', 'is_admin', 'pwd'));
     }
+
+    /**
+     * @param string $mail
+     * @param string $pwd
+     */
+    public function getUserInformations(string $mail, string $pwd)
+    {
+        $query = $this->pdo->prepare('SELECT * FROM `users` WHERE `mail` = :mail AND `password` = :pwd');
+        $query->execute(compact('mail', 'pwd'));
+        $result=$query->fetchAll($this->pdo::FETCH_OBJ);
+
+        //TODO
+        die('Cette feature est en cours de développement !');
+        if(password_verify($pwd, $result['pwd'])){
+            $_SESSION['id'] = $result['id'];
+            $_SESSION['mail'] = $result['mail'];
+        }else {
+            $_SESSION['error'][]="Mot de passe invalide";
+        }
+    }
 }

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -35,7 +37,7 @@
                         <a class="nav-link" href="index.php?path=signup">Inscription</a>
                     </li>
                     <li class="d-flex nav-item">
-                        <a class="nav-link" href="index.php?path=connect">Connexion</a>
+                        <a class="nav-link" href="index.php?path=connection">Connexion</a>
                     </li>
                 </ul>
             </div>

@@ -13,7 +13,8 @@
     <route path="update-user" action="update" controller="UserController" params="id, is_admin"/>
 
     <route path="userlist" action="index" controller="UserController" />
-    <route path="signup" action="view" controller="UserController" />
+    <route path="signup" action="viewSignup" controller="UserController" />
+    <route path="connection" action="viewConnect" controller="UserController" />
 
     <route path="delete-comment" action="delete" controller="CommentaryController" params="id" />
     <route path="insert-comment" action="insert" controller="CommentaryController" params="content, post_id" />

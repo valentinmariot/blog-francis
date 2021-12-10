@@ -106,9 +106,34 @@ class UserController extends Controller
         Http::redirect("index.php");
     }
 
-    public function view()
+    public function viewSignup()
     {
         $pageTitle = "S'enregistrer";
         Renderer::render('users/signup', compact('pageTitle'));
+    }
+
+    public function viewConnect()
+    {
+        $pageTitle = "Connexion";
+        Renderer::render('users/connect', compact('pageTitle'));
+    }
+
+    public function connection()
+    {
+
+        if(empty($_POST)){
+            $_SESSION['error'][]="Entrées invalides.";
+        }elseif($_POST['mail']==''){
+            $_SESSION['error'][]="Veuillez saisir votre adresse e-mail.";
+        }elseif($_POST['pwd']==''){
+            $_SESSION['error'][]="Veuillez saisir vote mot de passe.";
+        }else{
+        
+            $mail = htmlspecialchars(trim($_POST['mail']));
+            $pwd =htmlspecialchars(trim($_POST['pwd']));
+
+            $this->model->getUserInformations($mail, $pwd);
+        }
+        
     }
 }

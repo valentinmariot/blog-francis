@@ -2,8 +2,6 @@
 
 namespace App\Fram;
 
-use JetBrains\PhpStorm\NoReturn;
-
 class Http
 {
     public static function redirect(string $url)
@@ -11,4 +9,16 @@ class Http
             header("Location: $url");
             exit();
         }
+
+    public function connection()
+    {
+        session_start();
+
+    }
+
+
+    public function unconnection()
+    {
+        session_destroy();
+    }
 }
